@@ -1,12 +1,12 @@
-## Welcome to Fintracker
+# Welcome to Fintracker
 
-### Description
+## Description
 A personal finance tracker that allows users to manage expenses. Built on Python and Streamlit
 
-## Data
+### Data
 Data is using personal collected data stored in a CSV file.
 
-## To run
+### To run
 ```
 # Install dependencies
 pip3 install -r requirements.txt
