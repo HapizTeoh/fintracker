@@ -1,6 +1,6 @@
 import pandas as pd
 
-def data_cleanup(input_df):
+def data_reshape(input_df):
     # Remove rows with all NaN values
     clean_df = input_df.dropna(how='all')
 
@@ -9,7 +9,7 @@ def data_cleanup(input_df):
     clean_df = clean_df[~clean_df["Category"].isin(to_remove)]
 
     # Saving vs Spending vs Earning
-    saving_category = ['ESPP', 'ENDOWUS FLAGSHIP','ENDOWUS CASH SMART SECURE','SAVINGS ACC ']
+    saving_category = ['ESPP', 'ENDOWUS FLAGSHIP','ENDOWUS CASH SMART SECURE','SAVINGS ACC ','TRAVEL ']
     earning_category = ['on-calls, MBO']
 
     # Category that saves money
@@ -21,15 +21,19 @@ def data_cleanup(input_df):
     # Remaining categories are spending
     spending_df = clean_df[~clean_df["Category"].isin(saving_category)]
 
-    # Remove columns
-    spending_df = spending_df.drop('Annual Total', axis=1)
-    spending_df = spending_df.drop('Description', axis=1)
-
     # Remove earning categories
     spending_df = spending_df[spending_df["Category"] != "on-calls, MBO"]
 
     # Remove last row
     spending_df = spending_df[:-1]
+    
+    spending_category_dict = spending_df.drop_duplicates(subset='Category')[['Category', 'Description']]\
+                  .set_index('Category')['Description']\
+                  .to_dict()
+    
+    # Remove columns
+    spending_df = spending_df.drop('Annual Total', axis=1)
+    spending_df = spending_df.drop('Description', axis=1)
 
     # Change wide to long df
     long_df = pd.melt(spending_df, id_vars=["Category"], var_name="Month", value_name="Amount")
@@ -50,4 +54,4 @@ def data_cleanup(input_df):
     df_grouped = long_df.groupby(['Month', 'Category'], as_index=False)['Amount'].sum()
     df_grouped['year'] = "2024"
     
-    return df_grouped
+    return df_grouped,spending_category_dict
