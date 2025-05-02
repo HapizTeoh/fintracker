@@ -15,3 +15,20 @@ pip3 install -r requirements.txt
 streamlit run About.py
 ```
 
+## Development
+
+### Best practices
+
+1. Do not merge to main directly
+2. Branch naming convention
+
+    | Type        | Purpose                                     | Example                          |
+    |-------------|---------------------------------------------|----------------------------------|
+    | `feature/`  | New feature or enhancement                  | `feature/add-login-page`         |
+    | `bugfix/`   | Fixing a bug                                | `bugfix/fix-header-overlap`      |
+    | `hotfix/`   | Urgent fix on production                    | `hotfix/payment-crash`           |
+    | `chore/`    | Minor task (e.g. updating deps, config)     | `chore/update-packages`          |
+    | `refactor/` | Code refactoring without feature change     | `refactor/simplify-auth-flow`    |
+    | `docs/`     | Documentation updates                       | `docs/add-api-usage`             |
+    | `test/`     | Test-related work                           | `test/add-login-tests`           |
+    | `release/`  | Preparing or tagging a new release version  | `release/v1.2.0`                  |
