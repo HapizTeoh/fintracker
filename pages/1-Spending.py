@@ -36,7 +36,8 @@ fn.load_css()
 #########################
 # Data setup
 
-df_grouped = fn.data_cleanup(raw_df)
+# The data is reshaped and retrieve descriptions of the categories
+df_grouped,categories_desc = fn.data_reshape(raw_df)
 
 # Define the correct month order
 month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -183,11 +184,10 @@ with tab2:
             #######################
             
             with st.expander("See explanation"):
-                st.markdown('''
-                    #### Category explanation
-                    
-                    **Work**: In progress
-                ''')
+                markdown_text = "### Category Descriptions\n"
+                for cat, desc in categories_desc.items():
+                    markdown_text += f"- **{cat}**: {desc}\n"
+                st.markdown(markdown_text)
             
             #######################
             ## Table Chart  #######
