@@ -186,7 +186,7 @@ with tab2:
                 st.markdown('''
                     #### Category explanation
                     
-                    **Test**: Hello
+                    **Work**: In progress
                 ''')
             
             #######################
