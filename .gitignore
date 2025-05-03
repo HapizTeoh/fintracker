@@ -1,6 +1,14 @@
+## Exclude the following file extensions
 *.csv
 *.ipynb
-__pycache__/
 *.pyc
 .DS_Store
+
+## Exclude entire folders
+__pycache__/
+
+## Exclude the specific files
 finance_tracker.py
+
+## Include the following files
+!/data/sample-year.csv
