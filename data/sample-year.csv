@@ -1,0 +1,26 @@
+Category,Description,Limit,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,Annual Total
+,,,,,,,,,,,,
+SAVE,,,,,,,,,,,,
+ESPP,Company stocks,"$1,050.00 ",$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+ENDOWUS FLAGSHIP,Long-term growth,"$1,000.00 ",$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+ENDOWUS CASH SMART SECURE,Emergency Savings (Days/weeks access),$450.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+SAVINGS ACC ,Emergency Savings (Immediate access),$350.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+TRAVEL ,Travel Savings,$500.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+,,,,,,,,,,,,
+STATIC EXPENSES,,,,,,,,,,,,
+RENT,Monthly rent,"$1,300.00 ",$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+PARENT,"Any expenses for parents, excluding utils",$500.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+,,,,,,,,,,,,
+DYNAMIC EXPENSES,,,,,,,,,,,,
+FOOD,"Daily consumption, eating out and snacks",$500.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+"GROCERIES, GROOMING, MEDICAL & HOUSING","Mid-term food, haircut, housing items, etc.",$200.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+PERSONAL & OTHERS,"Personal expenditure, shopping or Gifts",$500.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+TRANSPORT,"Bus, MRT, Cycling",$100.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+SINGAPORE BILLS,"Phone bills, Subscriptions, Utilities",$50.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+MALAYSIA BILLS,Utilities for parents home in Malaysia,$500.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+ANNUAL MAINTENANCE,"Car maintenance,insurance etc.",$200.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+,,,,,,,,,,,,
+EXTRA CASH,,,,,,,,,,,,
+"on-calls, MBO",Bonus money from work,N/A,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+,,,,,,,,,,,,
+EXCESS,Any amount not spent above,N/A,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
