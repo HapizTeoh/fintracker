@@ -11,8 +11,12 @@ Data is using personal collected data stored in a CSV file.
 # Install dependencies
 pip3 install -r requirements.txt
 
+# Set up csv file
+For now, rename your test file to the filename below
+data/budget-2024.csv
+
 # Run the app
-streamlit run About.py
+streamlit run visualize/About.py
 ```
 
 ## Development

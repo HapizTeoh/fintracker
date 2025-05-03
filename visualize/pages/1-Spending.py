@@ -11,10 +11,10 @@ from pathlib import Path
 import functions as fn
 
 # Current script's directory
-current_dir = Path(__file__).parent.parent
+current_dir = Path(__file__).parent.parent.parent
 
 # Relative path to a subfolder named "data"
-data_folder = current_dir / "personal-sheet-data"
+data_folder = current_dir / "data"
 
 filelist = []
 # Loop through all files in that folder
@@ -22,10 +22,12 @@ for file in data_folder.iterdir():
     if file.is_file():
         filelist.append(file.name)
         
+print(filelist)
+        
 #########################
 # Load raw data
 for file in filelist:
-    raw_df = pd.read_csv(f"personal-sheet-data/{file}")
+    raw_df = pd.read_csv(f"data/budget-2024.csv")
     #raw_df["year"] = file.split("-")[1].split(".")[0]
 
 #########################
