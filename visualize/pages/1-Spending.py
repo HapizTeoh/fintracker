@@ -22,8 +22,6 @@ for file in data_folder.iterdir():
     if file.is_file():
         filelist.append(file.name)
         
-print(filelist)
-        
 #########################
 # Load raw data
 for file in filelist:
