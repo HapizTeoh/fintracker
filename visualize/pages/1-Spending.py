@@ -21,7 +21,7 @@ filelist = []
 # Loop through all files in that folder
 for file in data_folder.iterdir():
     _, extension = os.path.splitext(file)
-    if file.is_file() and extension == ".csv":
+    if file.is_file() and extension == ".csv" and file.name.startswith("budget-"):
         filelist.append(file.name)
         
 #########################
