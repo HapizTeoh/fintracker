@@ -11,4 +11,4 @@ __pycache__/
 finance_tracker.py
 
 ## Include the following files
-!/data/sample-year.csv
+!/data/template-file.csv

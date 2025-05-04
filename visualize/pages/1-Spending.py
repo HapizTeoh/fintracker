@@ -5,6 +5,7 @@ import pandas as pd
 import altair as alt
 import plotly.express as px
 from pathlib import Path
+import os
 
 ######################
 # Import internal libraries
@@ -19,14 +20,18 @@ data_folder = current_dir / "data"
 filelist = []
 # Loop through all files in that folder
 for file in data_folder.iterdir():
-    if file.is_file():
+    _, extension = os.path.splitext(file)
+    if file.is_file() and extension == ".csv":
         filelist.append(file.name)
         
 #########################
 # Load raw data
+combined_df = pd.DataFrame()
+
 for file in filelist:
-    raw_df = pd.read_csv(f"data/budget-2024.csv")
-    #raw_df["year"] = file.split("-")[1].split(".")[0]
+    new_data = pd.read_csv(f"data/{file}")
+    new_data["year"] = file.split("-")[1].split(".")[0]
+    combined_df = pd.concat([combined_df, new_data], ignore_index=True)
 
 #########################
 # Setup page and CSS
@@ -35,9 +40,6 @@ fn.load_css()
 
 #########################
 # Data setup
-
-# The data is reshaped and retrieve descriptions of the categories
-df_grouped,categories_desc = fn.data_reshape(raw_df)
 
 # Define the correct month order
 month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -52,9 +54,12 @@ tab1, tab2 = st.tabs(["Annual", "Monthly"])
 with st.sidebar:
     st.title('💰 Finance tracker')
     
-    year_list = list(df_grouped.year.unique())[::-1]
+    year_list = list(combined_df.year.unique())[::-1]
     selected_year = st.selectbox('Select a year', year_list)
-    df_selected_year = df_grouped[df_grouped.year == selected_year]
+    df_selected_year = combined_df[combined_df.year == selected_year]
+    
+# The data is reshaped and retrieve descriptions of the categories
+df_selected_year,categories_desc = fn.data_reshape(df_selected_year)
     
 with tab1:
     st.markdown("# Annual Spending")

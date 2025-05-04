@@ -4,7 +4,11 @@
 A personal finance tracker that allows users to manage expenses. Built on Python and Streamlit
 
 ### Data
-Data is using personal collected data stored in a CSV file.
+Data is using personal collected data stored in a CSV file. 
+The csv file should be name in the following format
+```
+data/budget-YYYY.csv
+```
 
 ### To run
 ```
