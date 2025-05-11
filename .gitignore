@@ -6,9 +6,11 @@
 
 ## Exclude entire folders
 __pycache__/
+secrets/
 
 ## Exclude the specific files
 finance_tracker.py
+visualize/.streamlit/secrets.toml
 
 ## Include the following files
 !/data/template-file.csv
