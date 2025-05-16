@@ -8,6 +8,28 @@ import pytesseract
 import re
 import pandas as pd
 
+def extract_qr_payment_info(html):
+    # Date: any "DD Month 20YY" pattern
+    date_match = re.search(r'\d{2} \w+ 20\d{2}', html)
+    date = date_match.group(0) if date_match else None
+
+    # Amount: e.g. SGD 8.00
+    amount_match = re.search(r'SGD ([\d\.,]+)', html)
+    amount = amount_match.group(1) if amount_match else None
+
+    # Extract Merchant (try PayNow first, fallback to NETS)
+    merchant_match = re.search(
+        r'has been made to ([^<]+?) using', html) or \
+        re.search(r'To</td><td> :</td><td>(.*?)</td>', html)
+
+    merchant = merchant_match.group(1).strip() if merchant_match else None
+    
+    return {
+        "date": datetime.datetime.strptime(date, "%d %B %Y").strftime("%Y-%m-%d") if date else None,
+        "merchant": merchant,
+        "amount": amount
+    }
+
 def extract_transactions(text):
     lines = [line.strip() for line in text.split('\n') if line.strip()]
     transactions = []
@@ -69,6 +91,11 @@ def process_downloaded_images(screenshots_dir):
             for transaction in transactions:
                 transaction["date"] = compute_absolute_date(transaction["date"], filename).strftime("%Y-%m-%d")
             all_transactions += transactions
+        elif filename.lower().endswith(".html"):
+            with open(os.path.join(screenshots_dir, filename), 'r', encoding='utf-8') as f:
+                html = f.read()
+                transaction = extract_qr_payment_info(html)
+                all_transactions += [transaction]
     
     return all_transactions
 
