@@ -23,6 +23,11 @@ data/budget-2024.csv
 streamlit run visualize/About.py
 ```
 
+### Ingest scripts
+
+The `ingest/` directory includes a collection of scripts to parse transactions from various sources.
+More details in [`ingest/README.md`](ingest/README.md).
+
 ## Development
 
 ### Best practices
